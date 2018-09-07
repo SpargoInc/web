@@ -11,12 +11,11 @@ COPY ./apache/conf/httpd.conf /etc/httpd/conf/httpd.conf
 COPY ./apache/www /var/www/html
 
 # Copy scripts
-COPY ./app_entrypoint.sh /
-COPY ./run.sh /
+COPY --chown=1001 ./scripts /spargo
 
 EXPOSE 80
 
 WORKDIR /var/www/html
 
-# ENTRYPOINT ["/app_entrypoint.sh"]
-CMD ["/run.sh"]
+# ENTRYPOINT ["/spargo/app_entrypoint.sh"]
+CMD ["/spargo/run.sh"]

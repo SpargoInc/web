@@ -1,6 +1,4 @@
 #!/bin/bash
 
-## The purpose of this file is to run the executable that
-## perpetuates the container.
-
+# Run Apache HTTPD
 httpd -DFOREGROUND

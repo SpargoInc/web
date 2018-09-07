@@ -11,7 +11,7 @@ COPY ./apache/www /var/www/html
 
 # Copy scripts
 COPY ./scripts /spargo
-
+RUN chmod 777 /spargo/* 
 EXPOSE 80
 WORKDIR /var/www/html
 

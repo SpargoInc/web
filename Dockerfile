@@ -10,13 +10,10 @@ COPY ./apache/conf/httpd.conf /etc/httpd/conf/httpd.conf
 COPY ./apache/www /var/www/html
 
 # Copy scripts
-COPY ./scripts /spargo
-RUN chmod 555 /spargo/app_entrypoint.sh && \
-    chmod 555 /spargo/run.sh
-
+COPY ./scripts/run.sh /spargo/run.sh
+RUN chmod 555 /spargo/run.sh
 
 WORKDIR /var/www/html
 EXPOSE 80
 
-# ENTRYPOINT ["/spargo/app_entrypoint.sh"]
-CMD ["/spargo/run.sh"]
+ENTRYPOINT ["/spargo/run.sh"]

@@ -38,4 +38,8 @@ footer, .footer {
     background-color: #550055;
     color: #efefef;
     font-size: .8rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
